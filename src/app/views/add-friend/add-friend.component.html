@@ -1,0 +1,96 @@
+<mat-card class="example-card" style="margin-bottom: 50px">
+  <mat-card-content>
+    <h1>Welcome!</h1>
+    <p>
+      * You can <strong>add users</strong> through the form below. All the
+      fields are necessary to enter.
+    </p>
+    <p>
+      * Visualization is on the right side, using a pie chart<strong
+        >(based on number of friends each user is having)</strong
+      >.
+    </p>
+    <p>
+      * Data of users added is <strong>listed below</strong> the the pie chart.
+    </p>
+  </mat-card-content>
+</mat-card>
+<p>
+  <mat-toolbar color="primary">
+    <span>Add User</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</p>
+<form [formGroup]="thisForm" (submit)="submit()" id="formID">
+  <mat-form-field appearance="fill" class="form-group">
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name" />
+    <mat-error
+      *ngIf="
+        thisForm.controls['name'].hasError('required') &&
+        thisForm.controls['name'].touched
+      "
+    >
+      Please enter the name!
+    </mat-error> </mat-form-field
+  ><br />
+
+  <mat-form-field appearance="fill" class="form-group">
+    <mat-label>Enter Friends</mat-label>
+    <mat-chip-list #chipList aria-label="Friend selection">
+      <mat-chip
+        *ngFor="let f of friends"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(f)"
+      >
+        {{ f.name }}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="New friend..."
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-chip-list> </mat-form-field
+  ><br />
+
+  <mat-form-field appearance="fill" class="form-group">
+    <mat-label>Age</mat-label>
+    <input type="number" matInput formControlName="age" />
+    <mat-error
+      *ngIf="
+        thisForm.controls['age'].hasError('required') &&
+        thisForm.controls['age'].touched
+      "
+    >
+      Please enter the age!
+    </mat-error> </mat-form-field
+  ><br />
+
+  <mat-form-field appearance="fill" class="form-group">
+    <mat-label>Weight(in lbs.)</mat-label>
+    <input type="number" matInput formControlName="weight" />
+    <mat-error
+      *ngIf="
+        thisForm.controls['weight'].hasError('required') &&
+        thisForm.controls['weight'].touched
+      "
+    >
+      Please enter the weight!
+    </mat-error> </mat-form-field
+  ><br />
+
+  <div class="form-element">
+    <button
+      mat-raised-button
+      type="submit"
+      [disabled]="!thisForm.valid || !friends.length"
+      color="warn"
+    >
+      SUBMIT
+    </button>
+  </div>
+</form>

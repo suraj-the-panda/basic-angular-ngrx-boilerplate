@@ -1,0 +1,155 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html,
+body {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* padding: 30px; */
+}
+
+/* -----------BASIC GRID LAYOUT ADJUSTMENTS-------------- */
+.col-form {
+  width: 30%;
+  float: left;
+  padding: 20px;
+}
+.col-data {
+  width: 65%;
+  float: left;
+  min-height: 95vh;
+  padding: 20px;
+  background-color: whitesmoke;
+}
+.col-pie {
+  width: 100%;
+  float: left;
+}
+.col-table {
+  width: 100%;
+  float: left;
+}
+.col-table table {
+  width: 100% !important;
+  border: 1px solid #e2e2e2;
+}
+.pie-figure {
+  text-align: center !important;
+}
+.pie-figure svg {
+  width: 100% !important;
+}
+
+.mat-form-field-underline {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  transform: scale3d(1, 1.0001, 1);
+}
+.mat-form-field-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple,
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+  background-color: rgb(0 0 0 / 0%);
+}
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: rgba(0, 0, 0, 0.42);
+}
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+}
+.mat-form-field-appearance-fill .mat-form-field-ripple {
+  bottom: 0;
+  height: 1px !important;
+}
+
+@media only screen and (max-width: 1600px) {
+  .col-form {
+    width: 29%;
+    float: left;
+    padding: 20px;
+  }
+  .col-data {
+    width: 65%;
+    float: left;
+    min-height: 95vh;
+    padding: 20px;
+    background-color: whitesmoke;
+  }
+  .col-pie {
+    width: 100%;
+    float: left;
+  }
+  .col-table {
+    width: 100%;
+    float: left;
+  }
+  .col-table table {
+    width: 100% !important;
+    border: 1px solid #e2e2e2;
+  }
+}
+
+@media only screen and (max-width: 1333px) {
+  .col-form {
+    width: 29%;
+    float: left;
+    padding: 20px;
+  }
+  .col-data {
+    width: 64%;
+    float: left;
+    min-height: 95vh;
+    padding: 20px;
+    background-color: whitesmoke;
+  }
+  .col-pie {
+    width: 100%;
+    float: left;
+  }
+  .col-table {
+    width: 100%;
+    float: left;
+  }
+  .col-table table {
+    width: 100% !important;
+    border: 1px solid #e2e2e2;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .col-form {
+    width: 100%;
+    float: left;
+    padding: 20px;
+  }
+  .col-data {
+    width: 100%;
+    float: left;
+    min-height: 95vh;
+    padding: 20px;
+    background-color: whitesmoke;
+  }
+  .col-pie {
+    width: 99%;
+    float: left;
+  }
+  .col-table {
+    width: 100%;
+    float: left;
+  }
+  .col-table table {
+    width: 100% !important;
+    border: 1px solid #e2e2e2;
+  }
+}
